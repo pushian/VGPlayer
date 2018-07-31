@@ -14,10 +14,34 @@ class VGVerticalViewController: UIViewController {
     var player : VGPlayer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8")
-        if url != nil {
-            player = VGPlayer(URL: url!)
+//        var path = Bundle.main.bundlePath
+//        path.append("/openpage.mp4")
+        
+        
+        guard let path = Bundle.main.path(forResource: "openpage", ofType:"mp4") else {
+            debugPrint("video.m4v not found")
+            return
         }
+        
+        let url = URL.init(fileURLWithPath: path)//URL(string: path)
+//        let url = URL.ini
+//        let url = URL(string:"https://cq-assets.fooyotravel.com/uploads/site_videos/video/1/hongyadong.mp4")!
+        debugPrint(url)
+        let data = NSData.init(contentsOfFile: path)
+//        debugPrint("debug \(data)")
+        player = VGPlayer(URL: url)
+        player?.player?.isMuted = true
+//        player?.displayView.bottomView.isHidden = true
+        player?.displayView.displayControlView(false)
+        player?.displayView.disableGesture = true
+        
+//        player?.displayView.singl
+//        player.voice
+//        player?.gravityMode = .resize
+
+//        if url != nil {
+//            player = VGPlayer(URL: url!)
+//        }
         player?.delegate = self
         view.addSubview((player?.displayView)!)
         player?.backgroundMode = .proceed

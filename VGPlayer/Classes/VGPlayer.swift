@@ -105,7 +105,7 @@ open class VGPlayer: NSObject {
     
     open var displayView : VGPlayerView
     
-    open var gravityMode : VGVideoGravityMode = .resizeAspect
+    open var gravityMode : VGVideoGravityMode = .resizeAspectFill
     open var backgroundMode : VGPlayerBackgroundMode = .autoPlayAndPaused
     open var bufferInterval : TimeInterval = 2.0
     open weak var delegate : VGPlayerDelegate?
@@ -190,6 +190,7 @@ open class VGPlayer: NSObject {
             playerItem = resourceLoaderManager.playerItem(URL)
         }
         player = AVPlayer(playerItem: playerItem)
+    
         displayView.reloadPlayerView()
     }
     

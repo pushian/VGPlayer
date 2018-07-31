@@ -62,6 +62,8 @@ open class VGPlayerView: UIView {
         }
     }
     open weak var delegate : VGPlayerViewDelegate?
+    open var disableGesture = false
+    
     // top view
     open var topView : UIView = {
         let view = UIView()
@@ -79,6 +81,7 @@ open class VGPlayerView: UIView {
         let button = UIButton(type: UIButtonType.custom)
         return button
     }()
+    
     
     // bottom view
     open var bottomView : UIView = {
@@ -441,6 +444,9 @@ extension VGPlayerView {
     ///
     /// - Parameter gesture: Single Tap Gesture
     @objc open func onSingleTapGesture(_ gesture: UITapGestureRecognizer) {
+        if disableGesture {
+            return
+        }
         isDisplayControl = !isDisplayControl
         displayControlView(isDisplayControl)
     }
@@ -449,7 +455,9 @@ extension VGPlayerView {
     ///
     /// - Parameter gesture: Double Tap Gesture
     @objc open func onDoubleTapGesture(_ gesture: UITapGestureRecognizer) {
-        
+        if disableGesture {
+            return
+        }
         guard vgPlayer == nil else {
             switch vgPlayer!.state {
             case .playFinished:
@@ -471,6 +479,9 @@ extension VGPlayerView {
     ///
     /// - Parameter gesture: Pan Gesture
     @objc open func onPanGesture(_ gesture: UIPanGestureRecognizer) {
+        if disableGesture {
+            return
+        }
         let translation = gesture.translation(in: self)
         let location = gesture.location(in: self)
         let velocity = gesture.velocity(in: self)
@@ -521,6 +532,7 @@ extension VGPlayerView {
     }
     
     internal func panGestureHorizontal(_ velocityX: CGFloat) -> TimeInterval {
+        
         displayControlView(true)
         isTimeSliding = true
         timer.invalidate()
@@ -536,6 +548,9 @@ extension VGPlayerView {
     }
     
     internal func panGestureVertical(_ velocityY: CGFloat) {
+        if disableGesture {
+            return
+        }
         isVolume ? (volumeSlider.value -= Float(velocityY / 10000)) : (UIScreen.main.brightness -= velocityY / 10000)
     }
 

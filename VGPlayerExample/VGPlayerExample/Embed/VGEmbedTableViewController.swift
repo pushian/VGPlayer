@@ -124,7 +124,7 @@ class VGEmbedTableViewController: UITableViewController {
         player.displayView.snp.makeConstraints {
             $0.edges.equalTo(cell)
         }
-        player.replaceVideo(URL(string:"http://baobab.wdjcdn.com/14399887845852_x264.mp4")!)
+        player.replaceVideo(URL(string:"https://cq-assets.fooyotravel.com/uploads/site_videos/video/1/hongyadong.mp4")!)
         player.play()
     }
     
@@ -158,29 +158,26 @@ class VGEmbedTableViewController: UITableViewController {
 
 extension VGEmbedTableViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if (context == &tableViewContext) {
-            
-            if keyPath == #keyPath(UITableView.contentOffset) {
-                if let playIndexPath = currentPlayIndexPath {
-                    
-                    if let cell = tableView.cellForRow(at: playIndexPath) {
-                        if player.displayView.isFullScreen { return }
-                        let visibleCells = tableView.visibleCells
-                        if visibleCells.contains(cell) {
-                            smallScreenView.removeFromSuperview()
-                            cell.contentView.addSubview(player.displayView)
-                            player.displayView.snp.remakeConstraints {
-                                $0.edges.equalTo(cell)
-                            }
-                            playerView.isSmallMode = false
-                        } else {
-                            addSmallScreenView()
+        if keyPath == #keyPath(UITableView.contentOffset) {
+            if let playIndexPath = currentPlayIndexPath {
+                
+                if let cell = tableView.cellForRow(at: playIndexPath) {
+                    if player.displayView.isFullScreen { return }
+                    let visibleCells = tableView.visibleCells
+                    if visibleCells.contains(cell) {
+                        smallScreenView.removeFromSuperview()
+                        cell.contentView.addSubview(player.displayView)
+                        player.displayView.snp.remakeConstraints {
+                            $0.edges.equalTo(cell)
                         }
+                        playerView.isSmallMode = false
                     } else {
-                        if isViewLoaded && (view.window != nil) {
-                            if smallScreenView.superview != UIApplication.shared.keyWindow {
-                                addSmallScreenView()
-                            }
+                        addSmallScreenView()
+                    }
+                } else {
+                    if isViewLoaded && (view.window != nil) {
+                        if smallScreenView.superview != UIApplication.shared.keyWindow {
+                            addSmallScreenView()
                         }
                     }
                 }

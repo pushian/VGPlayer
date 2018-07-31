@@ -24,6 +24,7 @@
 		80573F9D1EF93C6400F39826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80573F9C1EF93C6400F39826 /* Main.storyboard */; };
 		80B21B471EF54A51009E00EA /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 80B21B441EF54A51009E00EA /* 2.mp4 */; };
 		80B21B481EF54A51009E00EA /* Despacito Remix Luis Fonsi ft.Daddy Yankee Justin Bieber Lyrics [Spanish].srt in Resources */ = {isa = PBXBuildFile; fileRef = 80B21B451EF54A51009E00EA /* Despacito Remix Luis Fonsi ft.Daddy Yankee Justin Bieber Lyrics [Spanish].srt */; };
+		8541AC48211049EB003B2564 /* openpage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8541AC47211049E1003B2564 /* openpage.mp4 */; };
 		D7457CE6FAFD973B7FE84086 /* Pods_VGPlayerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF3229E2FBB5410B9B7A169 /* Pods_VGPlayerExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		80573F9C1EF93C6400F39826 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		80B21B441EF54A51009E00EA /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
 		80B21B451EF54A51009E00EA /* Despacito Remix Luis Fonsi ft.Daddy Yankee Justin Bieber Lyrics [Spanish].srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Despacito Remix Luis Fonsi ft.Daddy Yankee Justin Bieber Lyrics [Spanish].srt"; sourceTree = "<group>"; };
+		8541AC47211049E1003B2564 /* openpage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = openpage.mp4; sourceTree = "<group>"; };
 		8DF3229E2FBB5410B9B7A169 /* Pods_VGPlayerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VGPlayerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0366892B26AF094A35C3550 /* Pods-VGPlayerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VGPlayerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VGPlayerExample/Pods-VGPlayerExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 		3365C52B1EEB8FF100CC7F4F = {
 			isa = PBXGroup;
 			children = (
+				8541AC47211049E1003B2564 /* openpage.mp4 */,
 				3365C5361EEB8FF100CC7F4F /* VGPlayerExample */,
 				3365C5351EEB8FF100CC7F4F /* Products */,
 				5B1432FA1BB78218BD2B97AD /* Pods */,
@@ -200,7 +203,7 @@
 				TargetAttributes = {
 					3365C5331EEB8FF100CC7F4F = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = TVRG578TKB;
+						DevelopmentTeam = K2ERF9J63R;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8541AC48211049EB003B2564 /* openpage.mp4 in Resources */,
 				80B21B481EF54A51009E00EA /* Despacito Remix Luis Fonsi ft.Daddy Yankee Justin Bieber Lyrics [Spanish].srt in Resources */,
 				80573F9D1EF93C6400F39826 /* Main.storyboard in Resources */,
 				80B21B471EF54A51009E00EA /* 2.mp4 in Resources */,
@@ -435,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = TVRG578TKB;
+				DEVELOPMENT_TEAM = K2ERF9J63R;
 				INFOPLIST_FILE = VGPlayerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -451,7 +455,7 @@
 			baseConfigurationReference = 3D5990FF80C9CE3995DCAF81 /* Pods-VGPlayerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TVRG578TKB;
+				DEVELOPMENT_TEAM = K2ERF9J63R;
 				INFOPLIST_FILE = VGPlayerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
