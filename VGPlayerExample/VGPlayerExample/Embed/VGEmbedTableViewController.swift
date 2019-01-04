@@ -84,10 +84,9 @@ class VGEmbedTableViewController: UITableViewController {
         }
     }
     
-    var tableViewContext = 0
     func addTableViewObservers() {
         let options = NSKeyValueObservingOptions([.new, .initial])
-        tableView?.addObserver(self, forKeyPath: #keyPath(UITableView.contentOffset), options: options, context: &tableViewContext)
+        tableView?.addObserver(self, forKeyPath: #keyPath(UITableView.contentOffset), options: options, context: nil)
     }
 
     func removeTableViewObservers() {
@@ -174,11 +173,14 @@ extension VGEmbedTableViewController {
                     } else {
                         addSmallScreenView()
                     }
+                    playerView.isSmallMode = false
                 } else {
-                    if isViewLoaded && (view.window != nil) {
-                        if smallScreenView.superview != UIApplication.shared.keyWindow {
-                            addSmallScreenView()
-                        }
+                    addSmallScreenView()
+                }
+            } else {
+                if isViewLoaded && (view.window != nil) {
+                    if smallScreenView.superview != UIApplication.shared.keyWindow {
+                        addSmallScreenView()
                     }
                 }
             }
